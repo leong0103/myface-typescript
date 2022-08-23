@@ -2,11 +2,13 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1>Users</h1>
+<h2 class="page-title">Users</h2>
 <ol>
     <% results.forEach(function(user) {%>
         <li>
-            <%= user.name %>
+            <h3><%= user.username %></h3>
+            <img style='width: 100px' src="<%= user.profileImageUrl %>" alt="User Image">
+            <!-- link to page that displays all user's posts -->
         </li>
     <% }); %>
 </ol>

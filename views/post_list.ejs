@@ -2,34 +2,32 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
+    <div class="page-content">
+        <h2 class="page-title">Posts</h2>
+        <ol class="post-list">
+            <% postList.results.forEach(function(post) {%>
+                <div class="post-detail">
+                    <li>
+                        <h3><%= post.postedBy.username %></h3>
+                        <img src="<%= post.imageUrl %>" alt="Post Image">
+                        <p>&#128077; <%= post.likedBy.length %> | &#128078; <%= post.dislikedBy.length %> | <%= format(post.createdAt, "yyyy-MM-dd HH:mm") %></p>
 
-<h1>Posts</h1>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <h2><%= post.message %></h2>
-            <h3><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></h3>
-            <img style='width: 100px' src="<%= post.imageUrl %>" alt="Post Image">
-            <h4><%= post.postedBy.username %></h4>
-            
-            <h4>Like Count = <%= post.likedBy.length %></h4>
-            <h4>Dislike Count = <%= post.dislikedBy.length %></h4>
-
-
-            <% if (!post.likedBy.some(like => like?.id === 1) && !post.dislikedBy.some(dislike => dislike?.id === 1)) { %>
-                <form method="post"
-                action= "<%= `/posts/${post.id}/like/`%>">
-                <button type="submit">LIKE</button>
-                </form>
-                <form method="post" action= "<%= `/posts/${post.id}/dislike/` %>">
-                    <button type="submit">DISLIKE</button>
-                </form> 
-                                
-            <% } %>
-
-        </li>
-    <% }); %>
-</ol>
+                        <% if (!post.likedBy.some(like => like?.id === 1) && !post.dislikedBy.some(dislike => dislike?.id === 1)) { %>
+                            <form method="post"
+                            action= "<%= `/posts/${post.id}/like/`%>">
+                                <button type="submit">LIKE</button>
+                            </form>
+                            <form method="post" action= "<%= `/posts/${post.id}/dislike/` %>">
+                                <button type="submit">DISLIKE</button>
+                            </form> 
+                                            
+                        <% } %>
+                        <p><%= post.message %></p>
+                    </li>
+                </div>
+            <% }); %>
+        </ol>
+    </div>
 <%if (postList.next) { %>
     <a href="<%= postList.next %>">Next</a>
 <% } %>

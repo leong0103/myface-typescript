@@ -1,1 +1,62 @@
 /* Add your styles here. */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.page-content {
+    margin-top: 110px;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+nav a {
+    padding: 0px 5px;
+    text-decoration: none;
+}
+
+nav a:active {
+    color: orange;
+    background-color: aqua;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+.page-title {
+    text-align: center;
+    background-color: aqua;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.post-detail {
+    width: 100%;
+}
+
+.post-detail img {
+    width: 100%;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0px 10px;
+}
