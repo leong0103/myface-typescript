@@ -11,21 +11,22 @@
             <h3><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></h3>
             <img style='width: 100px' src="<%= post.imageUrl %>" alt="Post Image">
             <h4><%= post.postedBy.username %></h4>
-            <h4>Post ID = <%= post.id %></h4>
+            
             <h4>Like Count = <%= post.likedBy.length %></h4>
             <h4>Dislike Count = <%= post.dislikedBy.length %></h4>
-            
-            <p> <%= for (let i=0; i < post.likedBy.length; i++){
-                post.likedBy[i].id
-            } %> </p>
-            <form method="post" 
-                  action= "<%= `/posts/${post.id}/like/` %>">
+
+
+            <% if (!post.likedBy.some(like => like?.id === 1) && !post.dislikedBy.some(dislike => dislike?.id === 1)) { %>
+                <form method="post"
+                action= "<%= `/posts/${post.id}/like/`%>">
                 <button type="submit">LIKE</button>
-            </form>
-            <form method="post" action= "<%= `/posts/${post.id}/dislike/` %>">
-                <button type="submit">DISLIKE</button>
-            </form>   
-            <!-- hello world! -->
+                </form>
+                <form method="post" action= "<%= `/posts/${post.id}/dislike/` %>">
+                    <button type="submit">DISLIKE</button>
+                </form> 
+                                
+            <% } %>
+
         </li>
     <% }); %>
 </ol>

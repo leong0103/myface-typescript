@@ -5,6 +5,8 @@ interface PostUserModel {
   email: string;
 }
 
+
+// post.likeBy.some(liker => liker.id == 1);
 export interface PostModel {
   id: number;
   message: string;
