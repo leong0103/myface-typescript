@@ -15,6 +15,7 @@
             <h4>Like Count = <%= post.likedBy.length %></h4>
             <h4>Dislike Count = <%= post.dislikedBy.length %></h4>
 
+
             <% if (!post.likedBy.some(like => like?.id === 1) && !post.dislikedBy.some(dislike => dislike?.id === 1)) { %>
                 <form method="post"
                 action= "<%= `/posts/${post.id}/like/`%>">
@@ -25,6 +26,7 @@
                 </form> 
                                 
             <% } %>
+
         </li>
     <% }); %>
 </ol>
