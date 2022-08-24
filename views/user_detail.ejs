@@ -2,7 +2,43 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
+<div class="page-content">
+    <h2 class="page-title title"><%= name %></h2>
+    <h3><%= username %></h3>
+    <h3><%= email %></h3>
+    <img src="<%= profileImageUrl %>" alt="Profile Image">
+    <img src="<%= coverImageUrl %>" alt="Profile Image">
+    <h3>Recent Posts</h3>
+    <ol class="post-list">
+        <% for (let i = 0; i < 5; i++) {
+            let post = posts[i] %>
+            <div class="post-detail">
+                <li>
+                    <img src="<%= post.imageUrl %>" alt="Post Image">
+                    <h3 class="title"><%= username %></h3>
+                    
+                    <p><%= post.message %></p>
+                </li>
+            </div>
+        <% }; %>
+    </ol>
+    <h3>Recent Likes</h3>
+    <ol class="post-list">
+        <% for (let i = 0; i < 5; i++) {
+            let post = likes[i];
+            let id = post.id;
+            %>
+            <div class="post-detail">
+                <li>
+                    <img src="<%= post.imageUrl %>" alt="Post Image">
+                    <h3 class="title"><%= username %></h3>
+                    
+                    <p><%= post.message %></p>
+                </li>
+            </div>
+        <% }; %>
+    </ol>
+</div>
 </body>
 <%- include('_footer') -%>
 </html>
