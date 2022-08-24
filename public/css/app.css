@@ -1,5 +1,7 @@
 /* Add your styles here. */
 * {
+   
+
     font-family: 'Roboto', sans-serif;
 }
 
@@ -28,6 +30,8 @@ nav a {
     text-decoration: none;
 }
 
+
+
 nav a:active {
     color: orange;
     background-color: aqua;
@@ -46,17 +50,56 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px
 }
 
 .post-detail {
     width: 100%;
 }
 
+.like-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 10px;
+    
+}
+
+/* .like-button button{
+    margin: 0 5px 0 0;
+} */
 .post-detail img {
     width: 100%;
 }
 
 ol {
     list-style-type: none;
-    padding: 0px 10px;
+    padding-left: 0;
 }
+
+@media only screen and (min-width: 700px) {
+    .post-detail{
+        width: 45%;
+        /* padding: 8px; */
+    }
+
+    nav {
+        
+        justify-content: space-evenly; 
+    }
+
+
+    
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .post-detail{
+        width: 30%;
+
+    }
+
+    
+    
+  }
