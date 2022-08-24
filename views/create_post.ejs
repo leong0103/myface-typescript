@@ -4,15 +4,20 @@
 <body>
 <h1>Create Post</h1>
 <form method="post" action="/posts/create">
-    <label>
-        Message:
+    <div class="group">
         <input type="text" name="message" required/>
-    </label>
-    <label>
-        Image:
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Message:</label>
+    </div>
+    <div class="group">
         <input type="url" name="imageUrl" required/>
-    </label>
-    <button type="submit">Submit</button>
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Image URL</label>
+    </div>
+    <div class="btn-box">
+        <button class="btn btn-submit" type="submit">SUBMIT</button>
+        <button class="btn btn-cancel" type="button">CANCEL</button>
+    </div>
 </form>
 </body>
 <%- include('_footer') -%>
