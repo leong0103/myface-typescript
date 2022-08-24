@@ -2,22 +2,28 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h2 class="page-title">Users</h2>
-<ol>
-    <% results.forEach(function(user) {%>
-        <li>
-            <h3><%= user.username %></h3>
-            <img style='width: 100px' src="<%= user.profileImageUrl %>" alt="User Image">
-            <!-- link to page that displays all user's posts -->
-        </li>
-    <% }); %>
-</ol>
-<%if (next) { %>
-    <a href="<%= next %>">Next</a>
-<% } %>
-<%if (previous) { %>
-    <a href="<%= previous %>">Previous</a>
-<% } %>
+    <div class="page-content">
+        <h2 class="page-title">Users</h2>
+        <ol class="user-list">
+            <% results.forEach(function(user) {%>
+                <div class="user-detail">
+                    <li>
+                        <h3 class="title"><%= user.username %></h3>
+                        <img src="<%= user.profileImageUrl %>" alt="User Image">
+                        <!-- link to page that displays all user's posts -->
+                    </li>
+                </div>
+            <% }); %>
+        </ol>
+    </div>
+    <div class="next-previous">
+        <%if (previous) { %>
+            <a href="<%= previous %>">Previous</a>
+        <% } %>
+        <%if (next) { %>
+            <a href="<%= next %>">Next</a>
+        <% } %>
+    </div>
 </body>
 <%- include('_footer') -%>
 </html>

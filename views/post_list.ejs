@@ -3,12 +3,12 @@
 <%- include('_header') -%>
 <body>
     <div class="page-content">
-        <h2 class="page-title">Posts</h2>
+        <h2 class="page-title title">Posts</h2>
         <ol class="post-list">
             <% postList.results.forEach(function(post) {%>
                 <div class="post-detail">
                     <li>
-                        <h3><%= post.postedBy.username %></h3>
+                        <h3 class="title"><%= post.postedBy.username %></h3>
                         <img src="<%= post.imageUrl %>" alt="Post Image">
                         <p><%= post.message %></p>
                         <div class="like-button">
@@ -30,12 +30,14 @@
             <% }); %>
         </ol>
     </div>
-<%if (postList.next) { %>
-    <a href="<%= postList.next %>">Next</a>
-<% } %>
-<%if (postList.previous) { %>
-    <a href="<%= postList.previous %>">Previous</a>
-<% } %>
+    <div class="next-previous">
+        <%if (postList.previous) { %>
+            <a href="<%= postList.previous %>">Previous</a>
+        <% } %>
+        <%if (postList.next) { %>
+            <a href="<%= postList.next %>">Next</a>
+        <% } %>
+    </div>
 </body>
 <%- include('_footer') -%>
 </html>
