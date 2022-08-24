@@ -8,9 +8,11 @@
             <% results.forEach(function(user) {%>
                 <div class="user-detail">
                     <li>
+                        <a href="<%= `/users/${user.id}` %>">
                         <h3 class="title"><%= user.username %></h3>
                         <img src="<%= user.profileImageUrl %>" alt="User Image">
-                        <!-- link to page that displays all user's posts -->
+                        </a>
+                       
                     </li>
                 </div>
             <% }); %>
