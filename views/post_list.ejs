@@ -9,7 +9,7 @@
                 <div class="post-detail">
                     <li>
                         <h3 class="title"><%= post.postedBy.username %></h3>
-                        <img src="<%= post.imageUrl %>" alt="Post Image">
+                        <img class="post-image" src="<%= post.imageUrl %>" alt="Post Image">
                         <p><%= post.message %></p>
                         <div class="like-button">
                             <form method="post" action= "<%= `/posts/${post.id}/like/`%>">
