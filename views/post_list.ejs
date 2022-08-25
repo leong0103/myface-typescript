@@ -12,17 +12,12 @@
                         <img src="<%= post.imageUrl %>" alt="Post Image">
                         <p><%= post.message %></p>
                         <div class="like-button">
-                            <% if (!post.likedBy.some(like => like?.id === 1) && !post.dislikedBy.some(dislike => dislike?.id === 1)) { %>
-                                <form method="post"
-                                action= "<%= `/posts/${post.id}/like/`%>">
-                                
-                                <button type="submit">&#128077; <%= post.likedBy.length %></button>
+                            <form method="post" action= "<%= `/posts/${post.id}/like/`%>">
+                                <button class="btn btn-like" type="submit">&#128077; <%= post.likedBy.length %></button>
                             </form>
                             <form method="post" action= "<%= `/posts/${post.id}/dislike/` %>">
-                                <button type="submit">&#128078; <%= post.dislikedBy.length %></button>
-                            </form> 
-                            
-                            <% } %>
+                                <button class="btn btn-cancel" type="submit">&#128078; <%= post.dislikedBy.length %></button>
+                            </form>
                             <p><%= format(post.createdAt, "yyyy-MM-dd") %></p>
                         </div>
                     </li>

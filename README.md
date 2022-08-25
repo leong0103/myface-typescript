@@ -32,3 +32,18 @@ If you ever need to reset the database, then:
 - stop the app
 - delete the `dev.sqlite3` file.
 - run `npm run migrate` and `npm run seed` again to re-make and re-populate the database.
+
+
+Working code to get rid of like buttons:
+
+<% if (!post.likedBy.some(like => like?.id === 1) && !post.dislikedBy.some(dislike => dislike?.id === 1)) { %>
+                                <form method="post"
+                                action= "<%= `/posts/${post.id}/like/`%>">
+                                
+                                <button type="submit">&#128077; <%= post.likedBy.length %></button>
+                            </form>
+                            <form method="post" action= "<%= `/posts/${post.id}/dislike/` %>">
+                                <button type="submit">&#128078; <%= post.dislikedBy.length %></button>
+                            </form> 
+                            
+                            <% } %>
