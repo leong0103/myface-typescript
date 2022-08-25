@@ -3,13 +3,24 @@
 <%- include('_header') -%>
 <body>
 <div class="page-content">
-    <img class="cover-img" src="<%= coverImageUrl %>" alt="Profile Cover Image">
-    <div class="user-profile" style="background-image: url('<%= coverImageUrl %>');">
-        <h2 class="page-title title"><%= name %></h2>
-        <h3><%= username %></h3>
-        <h3><%= email %></h3>
-        <img class="profile-img" src="<%= profileImageUrl %>" alt="Profile Image">
+
+    <div class="user-detail-page-header">
+        <div class="cover-img">
+            <img src="<%= coverImageUrl %>" alt="Profile Cover Image">
+        </div>
+        <div class="user-profile">
+      
+                <img class="profile-img" src="<%= profileImageUrl %>" alt="Profile Image">
+                <div class="profile-info">
+
+                    <h3><%= name %></h3>
+                    <h3><%= username %></h3>
+                    <h3><%= email %></h3>
+                </div>
+        
+        </div>
     </div>
+    
     <h3>Recent Posts</h3>
     <ol class="post-list">
         <% for (let i = 0; i < 5; i++) {
