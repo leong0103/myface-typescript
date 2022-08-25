@@ -2,30 +2,37 @@
 //   // Add your JavaScript here.
 // });
 var colors = ["grey", "white"];
-
-    var colorIndex = 0;
-    function changeColor() {
-        var col = document.getElementById("body");
-        var header = document.getElementById("header");
-
-
-        // if( colorIndex >= colors.length ) {
-        //     colorIndex = 0;
-        // }
-        col.classList.toggle("dark-mode");
-        header.classList.toggle("dark-mode");
+var colorIndex = 0;
+function changeColor() {
+    var col = document.getElementById("body");
+    var header = document.getElementById("header");
 
 
-        // col.style.backgroundColor = colors[colorIndex];
-        // colorIndex++;
-    }
+    // if( colorIndex >= colors.length ) {
+    //     colorIndex = 0;
+    // }
+    col.classList.toggle("dark-mode");
+    header.classList.toggle("dark-mode");
 
-    function showNavBar(){
-      // const mobileNav = document.getElementsByClassName("mobile-nav-bar")
-      document.getElementById("mobile-nav-bar").style.display = "flex"
-    }
 
-    function closeNavBar(){
-      // const mobileNav = document.getElementsByClassName("mobile-nav-bar")
-      document.getElementById("mobile-nav-bar").style.display = "none"
-    }
+    // col.style.backgroundColor = colors[colorIndex];
+    // colorIndex++;
+}
+
+function showNavBar(){
+  // const mobileNav = document.getElementsByClassName("mobile-nav-bar")
+  document.getElementById("mobile-nav-bar").style.display = "flex"
+}
+
+function closeNavBar(){
+  // const mobileNav = document.getElementsByClassName("mobile-nav-bar")
+  document.getElementById("mobile-nav-bar").style.display = "none"
+}
+
+document.addEventListener("click", function(event) {
+  var navBar = document.getElementById("mobile-nav-bar");
+  var menuBurger = document.querySelector(".display-bar");
+  if (!navBar.contains(event.target) && !menuBurger.contains(event.target)) {
+    closeNavBar();
+  }
+})
