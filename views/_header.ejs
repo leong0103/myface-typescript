@@ -1,12 +1,39 @@
-<header>
+<header id="header">
+    <div class="display-bar" onclick="showNavBar()">
+
+        <i class="fa-solid fa-bars fa-xl"></i>
+
+    </div>
     <h1 class="title"> MyFace </h1>
-    <nav>
-        <a href="/posts">Posts</a>
-        |
-        <a href="/users">Users</a>
-        |
-        <a href="/posts/create">Create Post</a>
-        |
-        <a href="/users/create">Create User</a>
-    </nav>
+        <nav class="nav-bar">
+            <a href="/posts">Posts</a>
+            |
+            <a href="/users">Users</a>
+            |
+            <a href="/posts/create">Create Post</a>
+            |
+            <a href="/users/create">Create User</a>
+        </nav>
+  
+        <div id="mobile-nav-bar" class="mobile-nav-bar">
+            <h1 class="title"> MyFace </h1>
+            <div onclick="closeNavBar()">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+
+            </div>
+            <div>
+                <nav>
+                    <a href="/posts">Posts</a>
+                
+                <a href="/users">Users</a>
+                
+                <a href="/posts/create">Create Post</a>
+                
+                <a href="/users/create">Create User</a>
+                
+                 </nav>
+            </div>  
+            
+        </div>
+    
 </header>

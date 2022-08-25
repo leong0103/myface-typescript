@@ -13,6 +13,14 @@ header {
     width: 100%;
     background-color: white;
     z-index: 100;
+  
+}
+
+.fa-bars{
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 10px;
 }
 
 .page-content {
@@ -32,29 +40,64 @@ h1 {
 p {
     font-weight: 400;
 }
+.mobile-nav-bar{
+  background-color: rgba(0, 0, 0);
+  width: 75%;
+  height: 100%;
+  top: 0;
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: white;
+  gap: 100px;
+}
 
-nav {
-    display: flex;
+.fa-xmark{
+  color: white;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+}
+
+.mobile-nav-bar nav a{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  /* justify-content: center; */
+}
+.mobile-nav-bar nav a:hover{
+  color: rgba(200, 200, 200);
+}
+
+.nav-bar {
+  
+    /* display: flex; */
+     display: none;
     flex-direction: row;
     justify-content: center; 
 }
-nav a {
+.nav-bar a {
     padding: 0px 5px;
     text-decoration: none;
 }
 
-nav a:active {
+.nav-bar a:active {
     color: orange;
     background-color: aqua;
 }
 
-nav a:hover {
+.nav-bar a:hover {
     color: orange;
 }
 
 .page-title {
     text-align: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 /* USER PROFILE --------------------------------*/
@@ -75,7 +118,7 @@ nav a:hover {
   position:relative;
   top: 120px;
   color:white;
-  background-color: rgb(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   /* opacity: 0.2; */
   width: 100%;
   display: flex;
@@ -162,6 +205,16 @@ ol {
     .post-detail {
         width: 45%;
     }
+
+    .nav-bar{
+      display: flex;
+    }
+
+    .display-bar{
+      display: none;
+    }
+
+   
 
     .user-detail {
         width: 30%;
@@ -310,4 +363,9 @@ label {
 .btn.btn-like:hover {
   background: #208349;
   color: #e5faee;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
